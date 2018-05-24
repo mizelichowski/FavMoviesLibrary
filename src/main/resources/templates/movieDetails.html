@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:include="navBar :: menu"></div>
+<br>
+<center>
+    <form th:action="@{/redirect:home}">
+        <button type="submit" class="btn btn-dark">Return</button>
+    </form>
+</center>
+<br>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col" style="text-align: center">Movie</th>
+        <th scope="col" style="text-align: center">Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row" style="text-align: center">Title:</th>
+        <td th:text="${film.title}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Directed in Year:</th>
+        <td th:text="${film.year}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Rating:</th>
+        <td th:text="${film.rated}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Year of Release:</th>
+        <td th:text="${film.released}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Length of the Movie:</th>
+        <td th:text="${film.runtime}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Genre(s):</th>
+        <td th:text="${film.genre}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Directed by:</th>
+        <td th:text="${film.director}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Script by:</th>
+        <td th:text="${film.writer}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Starring:</th>
+        <td th:text="${film.actors}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Plot:</th>
+        <td th:text="${film.plot}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Language(s):</th>
+        <td th:text="${film.language}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Directed in:</th>
+        <td th:text="${film.country}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Awards:</th>
+        <td th:text="${film.awards}"></td>
+    </tr>
+    <tr>
+        <th scope="row" style="text-align: center">Poster:</th>
+        <td><img th:src="${film.poster}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Search results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:include="navBar :: menu"></div>
+<br>
+<center><h2>We have found some movies matching the entered name!</h2></center>
+<br/>
+<br/>
+<center>
+    <tr th:each="f : ${results}">
+        <form>
+            <td><a th:href="@{'/showMovie?iD=' + ${f.imdbID}}" th:text="${f.title + ' ' + '(' + (f.year) + ')'}"></a></td>
+        </form>
+        <br/>
+    </tr>
+    <br/>
+</center>
+</body>
+</html>
